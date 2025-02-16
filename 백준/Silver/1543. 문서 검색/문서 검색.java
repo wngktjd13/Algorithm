@@ -7,13 +7,10 @@ public class Main {
         String document = br.readLine();
         String word = br.readLine();
 
-        int count = 0;
+        int doc_size = document.length();
+        int word_size = word.length();
 
-        while (document.contains(word)) {
-            document= document.substring(document.indexOf(word)+word.length(), document.length());
-            count ++;
-        }
-
-        System.out.println(count);
+        document = document.replace(word, "");
+        System.out.println((doc_size - document.length()) / word_size);
     }
 }
